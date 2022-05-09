@@ -11,7 +11,7 @@ import {
   LoginBg,
   LogoBg,
   Link,
-} from "./LoginComponents";
+} from "./LoginElements";
 
 import LoginImg from "./../../assets/images/LoginImg.jpg";
 import LogoForm from "./../../assets/images/icon3.svg";
