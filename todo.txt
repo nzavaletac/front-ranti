@@ -1,0 +1,5 @@
+Apuntes
+- Paleta de colores
+    Principal: #01BF71 #77f16d
+    Oscuro: #010606 #010101 #2f2b35
+    Claro: #fff #e7e5ec
