@@ -10,7 +10,7 @@ import {
   IconFormContainer,
   LoginBg,
   LogoBg,
-  Link,
+  NavLink,
 } from "./LoginElements";
 
 import LoginImg from "./../../assets/images/LoginImg.jpg";
@@ -58,7 +58,7 @@ export const Login = ({ login, setEmail, setPassword }) => {
               </button>
               <p>
                 Don't have an account? Register{" "}
-                <Link href="/register">Here!</Link>
+                <NavLink to="/register">Here!</NavLink>
               </p>
             </Form>
           </FormContent>

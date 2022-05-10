@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   display: flex;
@@ -46,7 +47,7 @@ export const FormH1 = styled.h1`
   text-transform: uppercase;
 `;
 
-export const Link = styled.a`
+export const NavLink = styled(Link)`
   color: #77f16d;
 `;
 
