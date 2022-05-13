@@ -15,6 +15,7 @@ import {
 
 import LoginImg from "./../../assets/images/LoginImg.jpg";
 import LogoForm from "./../../assets/images/icon3.svg";
+import { Link } from "react-router-dom";
 
 export const Login = ({ login, setEmail, setPassword }) => {
   return (
@@ -27,7 +28,9 @@ export const Login = ({ login, setEmail, setPassword }) => {
           <FormContent>
             <Form onSubmit={login}>
               <IconFormContainer>
-                <IconForm src={LogoForm} />
+                <Link to="/">
+                  <IconForm src={LogoForm} />
+                </Link>
               </IconFormContainer>
               <FormH1>Sign in to your account</FormH1>
               <div className="container">
