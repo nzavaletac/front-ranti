@@ -1,58 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, UnOrderList, TagImg } from "./CategoriesElement";
 import tag from "../../assets/images/tag.svg";
+import axios from "axios";
 
 export const Categories = () => {
+  const [categories, setCategories] = useState([]);
+  console.log(categories);
+  useEffect(() => {
+    axios({
+      method: "GET",
+      baseURL: "http://localhost:8000",
+      url: "/categories",
+    }).then(({ data }) => setCategories(data.categories));
+  }, []);
+
   return (
     <Container>
       <UnOrderList>
         <li>All</li>
-        <li>
-          <TagImg src={tag} alt="" />
-          Accesorios
-        </li>
-        <li>
-          <TagImg src={tag} alt="" />
-          Books
-        </li>
-        <li>
-          <TagImg src={tag} alt="" />
-          Beauty
-        </li>
-        <li>
-          <TagImg src={tag} alt="" />
-          Clothing
-        </li>
-        <li>
-          <TagImg src={tag} alt="" />
-          Footwear
-        </li>
-
-        <li>
-          <TagImg src={tag} alt="" />
-          Home
-        </li>
-
-        <li>
-          <TagImg src={tag} alt="" />
-          Technology
-        </li>
-        <li>
-          <TagImg src={tag} alt="" />
-          Toys
-        </li>
-        <li>
-          <TagImg src={tag} alt="" />
-          Sliorts
-        </li>
-        <li>
-          <TagImg src={tag} alt="" />
-          Video game
-        </li>
-        <li>
-          <TagImg src={tag} alt="" />
-          Others
-        </li>
+        {categories.map((cat) => (
+          <li key={cat._id}>
+            <TagImg src={tag} alt="" /> {cat.title}
+          </li>
+        ))}
       </UnOrderList>
     </Container>
   );

@@ -1,9 +1,7 @@
 import React from "react";
 import {
   CardBody,
-  CardCategory,
   CardContainer,
-  CardDescription,
   CardHeader,
   Cards,
   CardTitle,
