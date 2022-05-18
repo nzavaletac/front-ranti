@@ -8,6 +8,7 @@ export const Container = styled.div`
 export const Column = styled.div`
   flex: 100%;
   text-align: center;
+  background-color: #fafafa;
 `;
 
 export const Section = styled.section`
@@ -34,7 +35,7 @@ export const Form = styled.form`
   display: grid;
   margin: 0 auto;
   border-radius: 15px;
-  background-color: #fff;
+  background-color: #fafafa;
 `;
 
 export const FormH1 = styled.h1`

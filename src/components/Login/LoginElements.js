@@ -9,6 +9,7 @@ export const Container = styled.div`
   top: 0;
   z-index: 0;
   overflow: hidden;
+  background-color: #fafafa;
 `;
 
 export const FormWrap = styled.div`
@@ -44,7 +45,7 @@ export const Form = styled.form`
   margin: 0 auto;
   padding: 40px 32px;
   border-radius: 15px;
-  background-color: #fff;
+  background-color: #fafafa;
 `;
 
 export const FormH1 = styled.h1`
