@@ -16,7 +16,7 @@ import {
 import LoginImg from "./../../assets/images/LoginImg.jpg";
 import LogoForm from "./../../assets/images/icon3.svg";
 
-export const Login = () => {
+export const Login = ({ login, setEmail, setPassword }) => {
   return (
     <>
       <Container>
@@ -25,13 +25,19 @@ export const Login = () => {
         </LoginBg>
         <FormWrap>
           <FormContent>
-            <Form>
+            <Form onSubmit={login}>
               <IconFormContainer>
                 <IconForm src={LogoForm} />
               </IconFormContainer>
               <FormH1>Sign in to your account</FormH1>
               <div className="container">
-                <input placeholder="Email" className="container__input" />
+                <input
+                  placeholder="Email"
+                  className="container__input"
+                  type="email"
+                  name="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
                 <label className="container__label">Email</label>
               </div>
               <div className="container">
@@ -39,10 +45,12 @@ export const Login = () => {
                   placeholder="Password"
                   className="container__input"
                   type="password"
+                  name="password"
+                  onChange={(e) => setPassword(e.target.value)}
                 />
                 <label className="container__label">Password</label>
               </div>
-              <button className="learn-more">
+              <button className="learn-more" type="submit">
                 <span className="circle" aria-hidden="true">
                   <span className="icon arrow"></span>
                 </span>
