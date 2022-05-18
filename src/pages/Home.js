@@ -4,6 +4,7 @@ import { Banner } from "../components/Banner/Banner";
 import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { NavBarHome } from "../components/NavBar/NavBarHome";
+import { Search } from "../components/Search/Search";
 
 export const Home = () => {
   const [products, setProducts] = useState([]);
@@ -20,6 +21,7 @@ export const Home = () => {
     <>
       <NavBarHome />
       <Banner />
+      <Search />
       <Main products={products} />
       <Footer />
     </>
