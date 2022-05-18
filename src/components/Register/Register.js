@@ -15,7 +15,7 @@ import RegisterImg from "./../../assets/images/RegisterImg.jpg";
 import LogoForm from "./../../assets/images/icon3.svg";
 import "./register.css";
 import { postUser } from "../../services/User.Services";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const emptyForm = {
   name: "",
@@ -79,7 +79,10 @@ export const Register = () => {
       <Column>
         <Form onSubmit={handleSubmit}>
           <IconFormContainer>
-            <IconForm src={LogoForm} />
+            <Link to="/">
+              {" "}
+              <IconForm src={LogoForm} />
+            </Link>
           </IconFormContainer>
           <FormH1>Sign in to your account</FormH1>
           <div className="container">
