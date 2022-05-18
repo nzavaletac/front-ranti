@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -75,6 +76,6 @@ export const LogoBg = styled.img`
   background: #232a34;
 `;
 
-export const Link = styled.a`
+export const NavLink = styled(Link)`
   color: #77f16d;
 `;
