@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { NavBarProfile } from "./components/NavBar/NavBarProfile";
+import { Admin } from "./admin/pages/Admin";
 import { DetailPage } from "./pages/DetailPage";
 import { Home } from "./pages/Home";
 import { LoginPage } from "./pages/LoginPage";
@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/profile" element={<NavBarProfile />} />
+        <Route path="/account" element={<Admin />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/products/:productId" element={<DetailPage />} />
