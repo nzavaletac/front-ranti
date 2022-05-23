@@ -65,6 +65,10 @@ export const UnOrderList = styled.ul`
     display: flex;
     padding: 30px 60px;
 
+    & span {
+      margin-right: 5px;
+    }
+
     &:hover {
       color: #1e1e1e;
       background-color: #fafafa;
