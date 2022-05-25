@@ -19,6 +19,7 @@
   background: #fff;
   transform: translate(0, -50%);
   opacity: 1;
+  margin-left: 20px;
 }
 
 .container__label {

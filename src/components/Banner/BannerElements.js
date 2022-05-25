@@ -51,6 +51,9 @@ export const Paragraph = styled.h4`
 export const RegisterBtn = styled(Link)`
   color: #77f16d;
   font-size: 22.4px;
+  &:hover {
+    color: #1e1e1e;
+  }
 `;
 
 export const BannerImg = styled.img`
