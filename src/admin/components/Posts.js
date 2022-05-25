@@ -1,5 +1,21 @@
-import React from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { CardPost } from "./CardPost";
 
 export const Posts = () => {
-  return <div>Hello from posts</div>;
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios({
+      method: "GET",
+      baseURL: "https://fakestoreapi.com",
+      url: "/products",
+    }).then(({ data }) => setProducts(data));
+  }, []);
+
+  return (
+    <>
+      <CardPost products={products} />
+    </>
+  );
 };

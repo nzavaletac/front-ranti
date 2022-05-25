@@ -9,5 +9,10 @@ export const Container = styled.div`
 `;
 
 export const Body = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: #fafafa;
   width: 85%;
+  height: auto;
 `;

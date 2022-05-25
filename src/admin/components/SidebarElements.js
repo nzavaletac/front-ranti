@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 export const Aside = styled.aside`
@@ -7,12 +7,11 @@ export const Aside = styled.aside`
   width: 15%;
   text-align: center;
   color: #fff;
-  height: calc(100vh -100px);
   border-bottom-right-radius: 50px;
 `;
 
 export const AsideContainer = styled.div`
-  display: flex;
+  width: 100%;
   flex-wrap: wrap;
   justify-content: center;
   text-align: center;
@@ -59,9 +58,12 @@ export const UnOrderList = styled.ul`
   }
 `;
 
-export const NavLink = styled(Link)`
+export const NavLink1 = styled(NavLink)`
   text-decoration: none;
-  &:active {
+  &.active {
     background-color: #fafafa;
+    & li {
+      color: #1e1e1e;
+    }
   }
 `;

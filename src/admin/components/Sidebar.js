@@ -7,7 +7,7 @@ import {
   AsideContainer,
   HeaderMenuProfile,
   HeaderMenuProfileImg,
-  NavLink,
+  NavLink1,
   UnOrderList,
   UserName,
 } from "./SidebarElements";
@@ -23,45 +23,45 @@ export const Sidebar = () => {
             <UserName>Hello! Noe</UserName>
           </HeaderMenuProfile>
           <UnOrderList>
-            <NavLink to="/account/posts" activeStyle>
+            <NavLink1 to="/account/posts" active>
               <li>
                 <span>
                   <FaClipboardList size="25px" />
                 </span>
                 Posts
               </li>
-            </NavLink>
-            <NavLink to="/account/chats" activeStyle>
+            </NavLink1>
+            <NavLink1 to="/account/chats" active>
               <li>
                 <span>
                   <AiFillWechat size="25px" />
                 </span>
                 Chats
               </li>
-            </NavLink>
-            <NavLink to="/account/settings" activeStyle>
+            </NavLink1>
+            <NavLink1 to="/account/settings" active>
               <li>
                 <span>
                   <AiFillSetting size="25px" />
                 </span>
                 Settings
               </li>
-            </NavLink>
-            <NavLink to="/account/profile" activeStyle>
+            </NavLink1>
+            <NavLink1 to="/account/profile" active>
               <li>
                 <span>
                   <FaUser size="25px" />
                 </span>
                 Profile
               </li>
-            </NavLink>
-            <NavLink to="/" activeStyle>
+            </NavLink1>
+            <NavLink1 to="/">
               <li>
                 <span>
                   <RiLogoutBoxFill size="25px" /> Log out
                 </span>
               </li>
-            </NavLink>
+            </NavLink1>
           </UnOrderList>
         </AsideContainer>
       </Aside>
