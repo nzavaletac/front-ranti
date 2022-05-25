@@ -3,11 +3,10 @@ import styled from "styled-components";
 
 export const Aside = styled.aside`
   display: flex;
-  background-color: #1e1e1e;
+  background-color: #fff;
   width: 15%;
   text-align: center;
-  color: #fff;
-  border-bottom-right-radius: 50px;
+  color: #1e1e1e;
 `;
 
 export const AsideContainer = styled.div`
@@ -30,7 +29,7 @@ export const HeaderMenuProfileImg = styled.img`
 
 export const UserName = styled.h4`
   text-align: center;
-  color: #fff;
+  color: #1e1e1e;
   margin: 50px 0px;
 `;
 
@@ -40,19 +39,19 @@ export const UnOrderList = styled.ul`
   justify-content: center;
   list-style: none;
   width: 100%;
-  border-top: 1px solid #fafafa;
+  border-top: 1px solid gray;
 
   & li {
     display: flex;
     padding: 30px 60px;
-    color: #fff;
+    color: #1e1e1e;
 
     & span {
       margin-right: 5px;
     }
     &:hover {
-      color: #1e1e1e;
-      background-color: #fafafa;
+      color: #fff;
+      background-color: #1e1e1e;
       cursor: pointer;
     }
   }
@@ -61,9 +60,9 @@ export const UnOrderList = styled.ul`
 export const NavLink1 = styled(NavLink)`
   text-decoration: none;
   &.active {
-    background-color: #fafafa;
+    background-color: #1e1e1e;
     & li {
-      color: #1e1e1e;
+      color: #fff;
     }
   }
 `;
