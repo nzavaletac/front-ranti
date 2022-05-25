@@ -18,6 +18,7 @@ export const AsideContainer = styled.div`
 
 export const HeaderMenuProfile = styled.div`
   align-items: center;
+  width: 100%;
   display: flex;
   cursor: pointer;
   flex-direction: column;
@@ -25,12 +26,14 @@ export const HeaderMenuProfile = styled.div`
 
 export const HeaderMenuProfileImg = styled.img`
   width: 100px;
+  margin-top: 10px;
 `;
 
 export const UserName = styled.h4`
   text-align: center;
   color: #1e1e1e;
   margin: 50px 0px;
+  width: 100%;
 `;
 
 export const UnOrderList = styled.ul`
@@ -40,11 +43,13 @@ export const UnOrderList = styled.ul`
   list-style: none;
   width: 100%;
   border-top: 1px solid gray;
+  left: 0;
 
   & li {
     display: flex;
     padding: 30px 60px;
     color: #1e1e1e;
+    left: 0;
 
     & span {
       margin-right: 5px;

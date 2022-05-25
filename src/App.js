@@ -10,6 +10,7 @@ import { Home } from "./pages/Home";
 import { LoginPage } from "./pages/LoginPage";
 import { RegisterPage } from "./pages/RegisterPage";
 
+
 function App() {
   function PrivateRoute({ children }) {
     const token = localStorage.getItem("token");

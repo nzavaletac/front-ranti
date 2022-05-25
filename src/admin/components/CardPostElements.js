@@ -71,11 +71,13 @@ export const CardBody = styled.div`
   overflow: hidden;
 `;
 
-export const CardTitle = styled.h5`
+export const CardTitle = styled.p`
   margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: 900;
 `;
 
-export const CardCategory = styled.h4`
+export const CardCategory = styled.p`
   color: #1e1e1e;
   font-size: 12px;
 `;
@@ -115,22 +117,22 @@ export const Button = styled(Link)`
   }
 `;
 
-export const Seller = styled.h4`
-  font-size: 12px;
+export const Seller = styled.p`
+  font-size: 11px;
 `;
 
-export const Whatsapp = styled.h4`
-  font-size: 12px;
+export const Whatsapp = styled.p`
+  font-size: 11px;
 `;
 
-export const Location = styled.h4`
-  font-size: 12px;
+export const Location = styled.p`
+  font-size: 11px;
 `;
 
-export const StateProduct = styled.h4`
-  font-size: 12px;
+export const StateProduct = styled.p`
+  font-size: 11px;
 `;
 
-export const ChangeFor = styled.h4`
-  font-size: 12px;
+export const ChangeFor = styled.p`
+  font-size: 11px;
 `;
