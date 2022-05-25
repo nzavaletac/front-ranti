@@ -23,7 +23,7 @@ export const LoginPage = () => {
       },
     });
     localStorage.setItem("token", token);
-    navigate("/profile");
+    navigate("/account");
   }
 
   return (

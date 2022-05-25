@@ -1,67 +1,28 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import { NavBarProfile } from "../../components/NavBar/NavBarProfile";
-import {
-  Aside,
-  AsideContainer,
-  Body,
-  Container,
-  UnOrderList,
-  HeaderMenuProfile,
-  HeaderMenuProfileImg,
-  UserName,
-} from "../components/MainElements";
-import profileImg from "../../assets/images/user.svg";
-import { FaClipboardList, FaUser } from "react-icons/fa";
-import { AiFillSetting, AiFillWechat } from "react-icons/ai";
-import { RiLogoutBoxFill } from "react-icons/ri";
+import { Chats } from "../components/Chats";
+import { Container, Body } from "../components/MainElements";
+import { Posts } from "../components/Posts";
+import { Profile } from "../components/Profile";
+import { Settings } from "../components/Settings";
+import { Sidebar } from "../components/Sidebar";
 
 export const Admin = () => {
   return (
     <>
-      <NavBarProfile />
       <Container>
-        <Aside>
-          <AsideContainer>
-            <HeaderMenuProfile>
-              <HeaderMenuProfileImg src={profileImg} />
-              <UserName>Hello! Noe</UserName>
-            </HeaderMenuProfile>
-            <UnOrderList>
-              <li>
-                <span>
-                  <FaClipboardList size="25px" />
-                </span>
-                Posts
-              </li>
-              <li>
-                <span>
-                  <AiFillWechat size="25px" />
-                </span>
-                Chats
-              </li>
-              <li>
-                {" "}
-                <span>
-                  <AiFillSetting size="25px" />
-                </span>{" "}
-                Settings
-              </li>
-              <li>
-                {" "}
-                <span>
-                  <FaUser size="25px" />
-                </span>{" "}
-                Profile
-              </li>
-              <li>
-                <span>
-                  <RiLogoutBoxFill size="25px" /> Log out
-                </span>
-              </li>
-            </UnOrderList>
-          </AsideContainer>
-        </Aside>
-        <Body>Dashboard Main</Body>
+        <NavBarProfile />
+        <Sidebar />
+        <Body>
+          <Routes>
+            <Route path="/" element={<Posts />} />
+            <Route path="/posts" element={<Posts />} />
+            <Route path="/chats" element={<Chats />} />
+            <Route path="/settings" element={<Settings />} />
+            <Route path="/profile" element={<Profile />} />
+          </Routes>
+        </Body>
       </Container>
     </>
   );
