@@ -9,6 +9,7 @@ export const Header = styled.header`
   justify-content: space-between;
   top: 0;
   width: 100%;
+  position: sticky;
   z-index: 20;
 `;
 
@@ -19,15 +20,8 @@ export const Logo = styled.img`
 
 export const HeaderMenu = styled.div`
   margin-right: 30px;
-`;
-
-export const HeaderMenuProfile = styled.div`
-  align-items: center;
-  display: flex;
-  cursor: pointer;
-`;
-
-export const HeaderMenuProfileImg = styled.img`
-  margin-right: 30px;
-  width: 50px;
+  & a {
+    text-decoration: none;
+    color: #fff;
+  }
 `;

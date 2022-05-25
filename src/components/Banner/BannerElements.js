@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   background-color: #fafafa;
@@ -47,7 +48,7 @@ export const Paragraph = styled.h4`
   font-size: 14px;
 `;
 
-export const RegisterBtn = styled.a`
+export const RegisterBtn = styled(Link)`
   color: #77f16d;
   font-size: 22.4px;
 `;

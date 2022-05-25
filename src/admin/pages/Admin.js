@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { NavBarProfile } from "../../components/NavBar/NavBarProfile";
 import { Chats } from "../components/Chats";
+import { Footer } from "../components/Footer";
 import { Container, Body } from "../components/MainElements";
 import { Posts } from "../components/Posts";
 import { Profile } from "../components/Profile";
@@ -24,6 +25,7 @@ export const Admin = () => {
           </Routes>
         </Body>
       </Container>
+      <Footer />
     </>
   );
 };

@@ -19,10 +19,10 @@ export const Banner = () => {
         <Section>
           <SubTitle>EXCHANGE YOUR PRODUCTS</SubTitle>
           <Title>
-            FAST AND <Span>EASY</Span>{" "}
+            FAST AND <Span>EASY</Span>
           </Title>
           <Paragraph>EXCHANGE PRODUCTS IN YOUR CITY</Paragraph>
-          <RegisterBtn href="/register">Register now</RegisterBtn>
+          <RegisterBtn to="/register">Register now</RegisterBtn>
         </Section>
       </Column>
       <Column>
