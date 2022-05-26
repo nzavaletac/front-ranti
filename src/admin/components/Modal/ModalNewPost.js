@@ -1,20 +1,23 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
+import { Form } from "./Form";
 
 export const ModalNewPost = ({ show, handleClose }) => {
   return (
     <>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title className="text-center">Add New Post</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Body>
+          <Form />
+        </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
+          <Button variant="dark" onClick={handleClose}>
+            Save
           </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
+          <Button variant="danger" onClick={handleClose}>
+            Close
           </Button>
         </Modal.Footer>
       </Modal>
