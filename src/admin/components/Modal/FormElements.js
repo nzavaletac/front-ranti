@@ -21,12 +21,29 @@ export const Form1 = styled.form`
   background-color: #fafafa;
 `;
 
-export const FormH1 = styled.h1`
-  margin-top: 0;
-  margin-bottom: 10px;
-  color: #2f2b35;
-  font-size: 20px;
-  font-weight: 400;
-  text-align: center;
-  text-transform: uppercase;
+export const ImgPreview = styled.img`
+  width: 400px;
+  margin-top: 15px;
+`;
+
+export const ContainerInputFile = styled.div`
+  position: relative;
+  align-items: center;
+  display: flex;
+  border: 1px solid gray;
+  padding: 8px;
+  border-radius: 15px;
+`;
+
+export const InputFile = styled.input`
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+`;
+
+export const IconFileUpload = styled.div`
+  margin-right: 8px;
 `;
