@@ -5,16 +5,17 @@ import { Footer } from "../components/Footer/Footer";
 import { Main } from "../components/Main/Main";
 import { NavBarHome } from "../components/NavBar/NavBarHome";
 import { Search } from "../components/Search/Search";
+import { URL_BACKEND } from "../environments/nvironments";
 
 export const Home = () => {
-  const [products, setProducts] = useState([]);
+  const [post, setpost] = useState([]);
 
   useEffect(() => {
     axios({
       method: "GET",
-      baseURL: "https://fakestoreapi.com",
-      url: "/products",
-    }).then(({ data }) => setProducts(data));
+      baseURL: `${URL_BACKEND}`,
+      url: "/post",
+    }).then(({ data }) => setpost(data.posts));
   }, []);
 
   return (
@@ -22,7 +23,7 @@ export const Home = () => {
       <NavBarHome />
       <Banner />
       <Search />
-      <Main products={products} />
+      <Main post={post} />
       <Footer />
     </>
   );

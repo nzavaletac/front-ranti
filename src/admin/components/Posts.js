@@ -7,7 +7,7 @@ import { MdAddCircle } from "react-icons/md";
 import { ModalNewPost } from "./Modal/ModalNewPost";
 
 export const Posts = () => {
-  const [products, setProducts] = useState([]);
+  const [post, setPost] = useState([]);
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -16,9 +16,9 @@ export const Posts = () => {
   useEffect(() => {
     axios({
       method: "GET",
-      baseURL: "https://fakestoreapi.com",
-      url: "/products",
-    }).then(({ data }) => setProducts(data));
+      baseURL: "http://localhost:8000",
+      url: "/post",
+    }).then(({ data }) => setPost(data.posts));
   }, []);
 
   return (
@@ -36,7 +36,7 @@ export const Posts = () => {
           </Button>
           <SearchPost />
         </ContainerButton>
-        <CardPost products={products} />
+        <CardPost post={post} />
       </Container>
     </>
   );

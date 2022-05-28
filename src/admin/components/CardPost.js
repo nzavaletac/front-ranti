@@ -9,45 +9,77 @@ import {
   TagCategory,
   CardBody,
   CardTitle,
-  StateProduct,
   Seller,
-  Whatsapp,
-  Location,
-  ChangeFor,
   ContainerDetail,
   Button,
+  Span,
 } from "./CardPostElements";
 import { BiDetail } from "react-icons/bi";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Modal, ModalBody, ModalHeader, ModalFooter } from "reactstrap";
+import { deletePost } from "../Services/Services";
 
-export const CardPost = ({ products }) => {
-  return products.map(({ id, title, image, price, category, description }) => (
-    <CardContainer>
-      <Cards key={id}>
-        <CardHeader>
-          <ContainerImg>
-            <Image src={image} />
-          </ContainerImg>
-          <TagPrice>S/ {price}</TagPrice>
-          <TagCategory>{category}</TagCategory>
-        </CardHeader>
-        <CardBody>
-          <CardTitle>{title}</CardTitle>
-          <StateProduct>State: New</StateProduct>
-          <ChangeFor>Change for: iPhone 8</ChangeFor>
-        </CardBody>
-        <ContainerDetail>
-          <Button to={`/products/${id}`}>
-            <BiDetail size="25px" />
-          </Button>
-          <Button to="">
-            <AiFillEdit size="25px" />
-          </Button>
-          <Button to="">
-            <AiFillDelete size="25px" />
-          </Button>
-        </ContainerDetail>
-      </Cards>
-    </CardContainer>
-  ));
+export const CardPost = ({ post }) => {
+  const [modal, setModal] = React.useState(false);
+  const toggle = () => setModal(!modal);
+
+  return post.map(
+    ({ _id, title, image, category, description, state, changeFor }) => (
+      <CardContainer>
+        <Cards key={_id}>
+          <CardHeader>
+            <ContainerImg>
+              <Image src={image} />
+            </ContainerImg>
+            <TagPrice>{state}</TagPrice>
+            <TagCategory>{category}</TagCategory>
+          </CardHeader>
+          <CardBody>
+            <CardTitle>{title}</CardTitle>
+            <Seller>
+              <Span>Description:</Span> {description} <br />
+              <Span>Change For:</Span> {changeFor} <br />
+              <Span>State:</Span> {state} <br />
+            </Seller>
+          </CardBody>
+          <ContainerDetail>
+            <Button to={`/products/${_id}`}>
+              <BiDetail size="25px" />
+            </Button>
+            <Button to="">
+              <AiFillEdit size="25px" />
+            </Button>
+            <Button onClick={toggle}>
+              <AiFillDelete size="25px" />
+            </Button>
+            <Modal
+              isOpen={modal}
+              toggle={toggle}
+              backdrop="false"
+              centered="true"
+            >
+              <ModalHeader toggle={toggle}>Delete Post</ModalHeader>
+              <ModalBody>Are you sure you want to delete the post?</ModalBody>
+              <ModalFooter>
+                <Button color="primary" onClick={toggle}>
+                  No
+                </Button>
+                <Button
+                  color="danger"
+                  onClick={() => {
+                    deletePost(_id);
+                    const fn = toggle;
+                    fn();
+                  }}
+                >
+                  Yes
+                </Button>
+              </ModalFooter>
+            </Modal>
+          </ContainerDetail>
+        </Cards>
+      </CardContainer>
+    )
+  );
 };
