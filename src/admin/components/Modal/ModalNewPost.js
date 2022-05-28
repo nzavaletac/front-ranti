@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import { Form } from "./Form";
 
 export const ModalNewPost = ({ show, handleClose }) => {
@@ -12,14 +12,6 @@ export const ModalNewPost = ({ show, handleClose }) => {
         <Modal.Body>
           <Form />
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="dark" onClick={handleClose}>
-            Save
-          </Button>
-          <Button variant="danger" onClick={handleClose}>
-            Close
-          </Button>
-        </Modal.Footer>
       </Modal>
     </>
   );

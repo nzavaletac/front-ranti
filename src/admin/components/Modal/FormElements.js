@@ -47,3 +47,7 @@ export const InputFile = styled.input`
 export const IconFileUpload = styled.div`
   margin-right: 8px;
 `;
+
+export const ButtonSubmit = styled.button`
+  border-radius: 50px;
+`;

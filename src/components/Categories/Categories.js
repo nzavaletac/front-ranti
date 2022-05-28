@@ -5,7 +5,6 @@ import axios from "axios";
 
 export const Categories = () => {
   const [categories, setCategories] = useState([]);
-  console.log(categories);
   useEffect(() => {
     axios({
       method: "GET",

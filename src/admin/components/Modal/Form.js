@@ -8,46 +8,78 @@ import {
   ContainerInputFile,
   InputFile,
   IconFileUpload,
+  ButtonSubmit,
 } from "./FormElements";
 import { FaUpload } from "react-icons/fa";
 import "../Modal/ModalNewPost.css";
+import { DEFAULT_IMG } from "../../../environments/nvironments";
+import Swal from "sweetalert2";
+import { createPost } from "../../Services/Services";
+
+const emptyForm = {
+  title: "",
+  description: "",
+  category: "",
+  state: "",
+  changeFor: "",
+  district: "",
+  image: `${DEFAULT_IMG}`,
+};
 
 export const Form = () => {
   const [categories, setCategories] = useState([]);
   const [file, setFile] = useState(null);
   const [preview, setPreview] = useState(null);
+  const [form, setForm] = useState(emptyForm);
 
   const handleImage = (file) => {
-    // const fileReader = new FileReader();
-    // fileReader.addEventListener("loadstart", () =>
-    //   console.log("Generating preview")
-    // );
-    // fileReader.addEventListener("load", (e) => setPreview(e.target.result));
-    // fileReader.addEventListener("error", (err) => console.log(err));
-    // fileReader.addEventListener("loadend", () => console.log("Process ended"));
-    // fileReader.readAsDataURL(file);
-    const result = URL.createObjectURL(file);
-    setPreview(result);
+    const fileReader = new FileReader();
+    fileReader.addEventListener("load", (e) => setPreview(e.target.result));
+    fileReader.readAsDataURL(file);
   };
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append("username", "simon");
-    formData.append("email", "simon@test.com");
-    formData.append("file", file.filename);
-    console.log(formData);
-    console.log(formData.get("email"));
-    axios({
-      method: "POST",
-      baseURL: "http://localhost:8000",
-      url: "/users/profile",
-      data: formData,
-      headers: {
-        "Content-Type": "multipart/form-data",
-      },
+  const handleChange = (e) => {
+    const valor = e.target.value;
+    setForm({
+      ...form,
+      [e.target.name]: valor,
     });
-  }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    form.image = preview;
+    Swal.fire({
+      title: "Are you sure?",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonText: "Yes",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        createPost(form).then((data) => {
+          if (data.post._id) {
+            setForm(emptyForm);
+            Swal.fire({
+              title: "Successful",
+              text: "Event created successfully",
+              icon: "success",
+              timer: 3500,
+            });
+            window.location.haref = "/account/posts";
+          } else {
+            if (data.error) {
+              Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Something went wrong!",
+                timer: 3500,
+              });
+            }
+          }
+        });
+      }
+    });
+  };
 
   useEffect(() => {
     axios({
@@ -67,26 +99,32 @@ export const Form = () => {
               type="text"
               placeholder="Title"
               className="container__input"
-              // onChange={"handleChange"}
-              // value={"form.name"}
+              onChange={handleChange}
+              value={form.name}
             />
             <label className="container__label">Title</label>
           </div>
           <div className="container">
             <input
-              name="name"
+              name="description"
               type="text"
               placeholder="Description"
               className="container__input"
-              // onChange={"handleChange"}
-              // value={"form.name"}
+              onChange={handleChange}
+              value={form.name}
             />
             <label className="container__label">Description</label>
           </div>
           <div className="container">
-            <select name="category" id="" className="container__input">
+            <select
+              id=""
+              name="category"
+              className="container__input"
+              onChange={handleChange}
+            >
+              <option value="">Select Category</option>
               {categories.map((cat) => (
-                <option value="" key={cat._id}>
+                <option value={cat.title} key={cat._id}>
                   {cat.title}
                 </option>
               ))}
@@ -94,32 +132,37 @@ export const Form = () => {
             <label className="container__label">Category</label>
           </div>
           <div className="container">
-            <select name="state" id="" className="container__input">
-              <option value="">New</option>
-              <option value="">Used Like New</option>
-              <option value="">Used</option>
+            <select
+              name="state"
+              className="container__input"
+              onChange={handleChange}
+            >
+              <option value="">Select State</option>
+              <option value="New">New</option>
+              <option value="Used Like New">Used Like New</option>
+              <option value="Used">Used</option>
             </select>
             <label className="container__label">State</label>
           </div>
           <div className="container">
             <input
-              name="change"
+              name="changeFor"
               type="text"
               placeholder="Change For"
               className="container__input"
-              // onChange={"handleChange"}
-              // value={"form.name"}
+              onChange={handleChange}
+              value={form.changeFor}
             />
             <label className="container__label">Change For</label>
           </div>
           <div className="container">
             <input
-              name="location"
+              name="district"
               type="text"
               placeholder="District and Province"
               className="container__input"
-              // onChange={"handleChange"}
-              // value={"form.name"}
+              onChange={handleChange}
+              value={form.district}
             />
             <label className="container__label">District and Province</label>
           </div>
@@ -129,7 +172,7 @@ export const Form = () => {
                 className="container__input"
                 name="image"
                 type="file"
-                id="name"
+                id="image"
                 accept="image/*"
                 multiple
                 onChange={(e) => {
@@ -144,6 +187,9 @@ export const Form = () => {
               <label className="container__label">Post Image</label>
             </ContainerInputFile>
           </div>
+          <ButtonSubmit className="btn btn-dark mt-4 p-3" type="submit">
+            Submit
+          </ButtonSubmit>
         </Form1>
         {preview && <ImgPreview src={preview} alt="preview" />}
       </Column1>
