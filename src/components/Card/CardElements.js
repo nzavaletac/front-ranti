@@ -67,7 +67,7 @@ export const CardBody = styled.div`
   height: 200px;
 `;
 
-export const CardTitle = styled.h5`
+export const CardTitle = styled.h4`
   margin-bottom: 5px;
 `;
 
@@ -113,21 +113,11 @@ export const Detail = styled(Link)`
 `;
 
 export const Seller = styled.h4`
-  font-size: 13px;
+  font-size: 14px;
+  text-align: justify;
 `;
 
-export const Whatsapp = styled.h4`
-  font-size: 13px;
-`;
-
-export const Location = styled.h4`
-  font-size: 13px;
-`;
-
-export const StateProduct = styled.h4`
-  font-size: 13px;
-`;
-
-export const ChangeFor = styled.h4`
-  font-size: 13px;
+export const Span = styled.span`
+  color: #19726c;
+  font-size: 16px;
 `;

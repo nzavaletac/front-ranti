@@ -19,8 +19,8 @@ import { createPost } from "../../Services/Services";
 const emptyForm = {
   title: "",
   description: "",
-  category: "",
-  state: "",
+  category: "Select Category",
+  state: "Select State",
   changeFor: "",
   district: "",
   image: `${DEFAULT_IMG}`,
@@ -100,7 +100,7 @@ export const Form = () => {
               placeholder="Title"
               className="container__input"
               onChange={handleChange}
-              value={form.name}
+              value={form.title}
             />
             <label className="container__label">Title</label>
           </div>
@@ -111,13 +111,12 @@ export const Form = () => {
               placeholder="Description"
               className="container__input"
               onChange={handleChange}
-              value={form.name}
+              value={form.description}
             />
             <label className="container__label">Description</label>
           </div>
           <div className="container">
             <select
-              id=""
               name="category"
               className="container__input"
               onChange={handleChange}

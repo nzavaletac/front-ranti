@@ -5,16 +5,14 @@ import {
   CardHeader,
   Cards,
   CardTitle,
-  ChangeFor,
   ContainerDetail,
   ContainerImg,
   Detail,
   Image,
-  Location,
   Seller,
+  Span,
   TagCategory,
   TagPrice,
-  Whatsapp,
 } from "./CardElements";
 
 export const Card = ({ post }) => {
@@ -40,13 +38,18 @@ export const Card = ({ post }) => {
           </CardHeader>
           <CardBody>
             <CardTitle>{title}</CardTitle>
-            <Whatsapp>Description: {description}</Whatsapp>
-            <Location>District: {district}</Location>
-            <ChangeFor>Change for: {changeFor}</ChangeFor>
-            <Seller>By: Noe Zavaleta Cardeña</Seller>
+            <Seller>
+              <Span>Description:</Span>
+              {description} <br />
+              <Span>District: </Span> {district} <br />
+              <Span>Change for:</Span> {changeFor}br
+            </Seller>
+            <Seller>
+              <Span>By:</Span> Noe Zavaleta Cardeña
+            </Seller>
           </CardBody>
           <ContainerDetail>
-            <Detail to={`/products/${_id}`}>See more</Detail>
+            <Detail to={`/products/${_id}`}>Detail</Detail>
           </ContainerDetail>
         </Cards>
       </CardContainer>
