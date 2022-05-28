@@ -40,9 +40,14 @@ export const Category = styled.div`
   padding: 3px 10px;
 `;
 
-export const Price = styled.p`
-  font-size: 25px;
+export const ContainerDetails = styled.p`
+  font-size: 15px;
   margin: 15px 0;
+`;
+
+export const Span = styled.span`
+  color: #19726c;
+  font-size: 17px;
 `;
 
 export const Add = styled.button`
@@ -71,5 +76,5 @@ export const Description = styled.p`
 
 export const HR = styled.hr`
   width: 100%;
-  border: 1px solid #e8e8ed;
+  border: 1px solid gray;
 `;

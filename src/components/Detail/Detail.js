@@ -10,9 +10,10 @@ import {
   Description,
   HR,
   Image,
-  Price,
   Title,
   TitleDescription,
+  ContainerDetails,
+  Span,
 } from "./DetailElements";
 import { FaWhatsapp } from "react-icons/fa";
 import { URL_BACKEND } from "../../environments/nvironments";
@@ -43,9 +44,15 @@ export const Detail = () => {
         <Title>{title}</Title>
         <Category>{category}</Category>
         <HR />
-        <Price>State: {state}</Price>
-        <Price>Change For: {changeFor}</Price>
-        <Price>Location: {district}</Price>
+        <ContainerDetails>
+          <Span>State:</Span> {state}
+        </ContainerDetails>
+        <ContainerDetails>
+          <Span>Change For:</Span> {changeFor}
+        </ContainerDetails>
+        <ContainerDetails>
+          <Span>Location:</Span> {district}
+        </ContainerDetails>
         <Add type="button">
           Continuar en Whatsapp <FaWhatsapp size="25px" />
         </Add>
