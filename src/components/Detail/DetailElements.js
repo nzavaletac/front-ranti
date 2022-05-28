@@ -8,7 +8,7 @@ export const Container = styled.section`
   padding: 10px;
   margin-top: 25px;
   margin: 50px auto;
-  /* box-shadow: #aaa 0px 0px 8px; */
+  box-shadow: #aaa 0px 0px 1px;
   max-width: 1248px;
 `;
 

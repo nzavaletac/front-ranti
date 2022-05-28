@@ -49,7 +49,7 @@ export const Card = ({ post }) => {
             </Seller>
           </CardBody>
           <ContainerDetail>
-            <Detail to={`/products/${_id}`}>Detail</Detail>
+            <Detail to={`/post/${_id}`}>Detail</Detail>
           </ContainerDetail>
         </Cards>
       </CardContainer>
