@@ -13,6 +13,7 @@ import {
   ContainerDetail,
   Button,
   Span,
+  GoToDetail,
 } from "./CardPostElements";
 import { BiDetail } from "react-icons/bi";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
@@ -44,9 +45,9 @@ export const CardPost = ({ post }) => {
             </Seller>
           </CardBody>
           <ContainerDetail>
-            <Button to={`/products/${_id}`}>
+            <GoToDetail to={`/post/${_id}`}>
               <BiDetail size="25px" />
-            </Button>
+            </GoToDetail>
             <Button to="">
               <AiFillEdit size="25px" />
             </Button>

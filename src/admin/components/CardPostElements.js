@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
@@ -104,6 +105,20 @@ export const ContainerDetail = styled.div`
 `;
 
 export const Button = styled.button`
+  padding: 6px 10px;
+  color: #1e1e1e;
+  border-radius: 50px;
+  text-decoration: none;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: 15px;
+  &:hover {
+    color: #77f16d;
+  }
+`;
+
+export const GoToDetail = styled(Link)`
   padding: 6px 10px;
   color: #1e1e1e;
   border-radius: 50px;
