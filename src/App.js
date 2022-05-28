@@ -10,7 +10,6 @@ import { Home } from "./pages/Home";
 import { LoginPage } from "./pages/LoginPage";
 import { RegisterPage } from "./pages/RegisterPage";
 
-
 function App() {
   function PrivateRoute({ children }) {
     const token = localStorage.getItem("token");
@@ -23,7 +22,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/products/:productId" element={<DetailPage />} />
+        <Route path="/post/:postId" element={<DetailPage />} />
         <Route
           path="/account/*"
           element={

@@ -10,28 +10,28 @@ import {
   Description,
   HR,
   Image,
-  Price,
   Title,
   TitleDescription,
+  ContainerDetails,
+  Span,
 } from "./DetailElements";
 import { FaWhatsapp } from "react-icons/fa";
+import { URL_BACKEND } from "../../environments/nvironments";
 
 export const Detail = () => {
-  const { productId } = useParams();
-  const [product, setProduct] = useState({});
-  const [rating, setRating] = useState([]);
+  const { postId } = useParams();
+  const [post, setPost] = useState({});
 
-  const { image, title, category, price, description } = product;
-  const { rate, count } = rating;
+  const { image, title, category, state, description, changeFor, district } =
+    post;
 
   useEffect(() => {
     axios({
       method: "GET",
-      baseURL: "https://fakestoreapi.com",
-      url: `/products/${productId}`,
+      baseURL: `${URL_BACKEND}`,
+      url: `/post/${postId}`,
     }).then(({ data }) => {
-      setProduct(data);
-      setRating(data.rating);
+      setPost(data.posts);
     });
   });
 
@@ -44,7 +44,15 @@ export const Detail = () => {
         <Title>{title}</Title>
         <Category>{category}</Category>
         <HR />
-        <Price>S/ {price}</Price>
+        <ContainerDetails>
+          <Span>State:</Span> {state}
+        </ContainerDetails>
+        <ContainerDetails>
+          <Span>Change For:</Span> {changeFor}
+        </ContainerDetails>
+        <ContainerDetails>
+          <Span>Location:</Span> {district}
+        </ContainerDetails>
         <Add type="button">
           Continuar en Whatsapp <FaWhatsapp size="25px" />
         </Add>
@@ -52,9 +60,6 @@ export const Detail = () => {
         <TitleDescription>Description</TitleDescription>
         <Description>{description}</Description>
         <HR />
-        <strong>Rate: </strong>
-        {rate} <strong>Count: </strong>
-        {count}
       </ContainerDetail>
     </Container>
   );
