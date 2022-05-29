@@ -50,7 +50,7 @@ export const Span = styled.span`
   font-size: 17px;
 `;
 
-export const Add = styled.button`
+export const Add = styled.a`
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -62,6 +62,11 @@ export const Add = styled.button`
   border-radius: 50px;
   margin: 15px 0;
   width: 100%;
+  text-decoration: none;
+  &:hover {
+    color: #fff;
+    text-decoration: double;
+  }
 `;
 
 export const TitleDescription = styled.h2`

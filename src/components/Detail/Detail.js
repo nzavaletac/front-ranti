@@ -16,14 +16,26 @@ import {
   Span,
 } from "./DetailElements";
 import { FaWhatsapp } from "react-icons/fa";
-import { URL_BACKEND } from "../../environments/nvironments";
+import {
+  DEFAULT_MESSAGE,
+  URL_BACKEND,
+  URL_WHATSAPP,
+} from "../../environments/nvironments";
 
 export const Detail = () => {
   const { postId } = useParams();
   const [post, setPost] = useState({});
 
-  const { image, title, category, state, description, changeFor, district } =
-    post;
+  const {
+    image,
+    title,
+    category,
+    state,
+    description,
+    changeFor,
+    district,
+    whatsapp,
+  } = post;
 
   useEffect(() => {
     axios({
@@ -53,7 +65,10 @@ export const Detail = () => {
         <ContainerDetails>
           <Span>Location:</Span> {district}
         </ContainerDetails>
-        <Add type="button">
+        <Add
+          href={`${URL_WHATSAPP}${51993645977}${DEFAULT_MESSAGE}`}
+          target="_blank"
+        >
           Continuar en Whatsapp <FaWhatsapp size="25px" />
         </Add>
         <HR />
