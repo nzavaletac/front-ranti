@@ -12,7 +12,7 @@ export const LoginPage = () => {
   async function login(e) {
     e.preventDefault();
     const {
-      data: { token },
+      data: { token, user },
     } = await axios({
       method: "POST",
       baseURL: URL_BACKEND,
@@ -23,6 +23,9 @@ export const LoginPage = () => {
       },
     });
     localStorage.setItem("token", token);
+    localStorage.setItem("user", user.name);
+    localStorage.setItem("userId", user._id);
+    localStorage.setItem("userWhatsapp", user.whatsapp);
     navigate("/account");
   }
 
