@@ -14,13 +14,14 @@ import {
 import profileImg from "../../assets/images/user.svg";
 
 export const Sidebar = () => {
+  const userName = localStorage.getItem("user");
   return (
     <>
       <Aside>
         <AsideContainer>
           <HeaderMenuProfile>
             <HeaderMenuProfileImg src={profileImg} />
-            <UserName>Hello! Noe</UserName>
+            <UserName>Hello! {userName}</UserName>
           </HeaderMenuProfile>
           <UnOrderList>
             <NavLink1 to="/account/posts" active>

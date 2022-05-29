@@ -4,6 +4,7 @@ import { Header, Logo, NavBtn, NavBtnLink } from "./NavBarHomeElements";
 import logo from "../../assets/images/icon2.svg";
 
 export const NavBarHome = () => {
+  const userName = localStorage.getItem("user");
   return (
     <Header>
       <Link to="/">
@@ -17,12 +18,20 @@ export const NavBarHome = () => {
         <NavBtnLink to="/account" active>
           Account
         </NavBtnLink>
-        <NavBtnLink to="/register" active>
-          Register
-        </NavBtnLink>
-        <NavBtnLink to="/login" active>
-          Log in
-        </NavBtnLink>
+        {userName ? (
+          `Hi! ${userName}`
+        ) : (
+          <NavBtnLink to="/register" active>
+            Register
+          </NavBtnLink>
+        )}
+        {userName ? (
+          ""
+        ) : (
+          <NavBtnLink to="/login" active>
+            Login
+          </NavBtnLink>
+        )}
       </NavBtn>
     </Header>
   );

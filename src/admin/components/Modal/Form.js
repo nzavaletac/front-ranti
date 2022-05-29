@@ -16,6 +16,9 @@ import { DEFAULT_IMG } from "../../../environments/nvironments";
 import Swal from "sweetalert2";
 import { createPost } from "../../Services/Services";
 
+const userId = localStorage.getItem("userId");
+const userName = localStorage.getItem("user");
+
 const emptyForm = {
   title: "",
   description: "",
@@ -23,6 +26,8 @@ const emptyForm = {
   state: "Select State",
   changeFor: "",
   district: "",
+  creator: userId,
+  creatorName: userName,
   image: `${DEFAULT_IMG}`,
 };
 
