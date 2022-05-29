@@ -27,8 +27,16 @@ export const Detail = () => {
   const [post, setPost] = useState({});
   const userWhatsapp = localStorage.getItem("userWhatsapp");
 
-  const { image, title, category, state, description, changeFor, district } =
-    post;
+  const {
+    image,
+    title,
+    category,
+    state,
+    description,
+    changeFor,
+    district,
+    creatorName,
+  } = post;
 
   useEffect(() => {
     axios({
@@ -62,12 +70,20 @@ export const Detail = () => {
           <Span>Whatsapp: </Span>
           {userWhatsapp}
         </ContainerDetails>
+        <ContainerDetails>
+          <Span>By: </Span>
+          {creatorName}
+        </ContainerDetails>
         <Add
           href={`${URL_WHATSAPP}51${userWhatsapp}${DEFAULT_MESSAGE}`}
           target="_blank"
         >
-          Continuar en Whatsapp <FaWhatsapp size="25px" />
+          <span className="mr-3">
+            <FaWhatsapp size="25px" />
+          </span>
+          <span className="ml-5">Contact with {creatorName}</span>
         </Add>
+
         <HR />
         <TitleDescription>Description</TitleDescription>
         <Description>{description}</Description>
