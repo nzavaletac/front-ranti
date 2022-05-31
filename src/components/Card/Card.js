@@ -16,7 +16,6 @@ import {
 } from "./CardElements";
 
 export const Card = ({ post }) => {
-  const userWhatsapp = localStorage.getItem("userWhatsapp");
   return post.map(
     ({
       _id,
@@ -28,6 +27,7 @@ export const Card = ({ post }) => {
       district,
       changeFor,
       creatorName,
+      whatsapp,
     }) => (
       <CardContainer>
         <Cards key={_id}>
@@ -48,7 +48,7 @@ export const Card = ({ post }) => {
               <Span>By: </Span>
               {creatorName} <br />
               <Span>Whatsapp: </Span>
-              {userWhatsapp}
+              {whatsapp}
             </Seller>
           </CardBody>
           <ContainerDetail>

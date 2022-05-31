@@ -18,6 +18,7 @@ import { createPost } from "../../Services/Services";
 
 const userId = localStorage.getItem("userId");
 const userName = localStorage.getItem("user");
+const userWhatsapp = localStorage.getItem("userWhatsapp");
 
 const emptyForm = {
   title: "",
@@ -28,6 +29,7 @@ const emptyForm = {
   district: "",
   creator: userId,
   creatorName: userName,
+  whatsapp: userWhatsapp,
   image: `${DEFAULT_IMG}`,
 };
 
