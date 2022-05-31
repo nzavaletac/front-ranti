@@ -25,7 +25,6 @@ import {
 export const Detail = () => {
   const { postId } = useParams();
   const [post, setPost] = useState({});
-  const userWhatsapp = localStorage.getItem("userWhatsapp");
 
   const {
     image,
@@ -36,6 +35,7 @@ export const Detail = () => {
     changeFor,
     district,
     creatorName,
+    whatsapp,
   } = post;
 
   useEffect(() => {
@@ -68,14 +68,14 @@ export const Detail = () => {
         </ContainerDetails>
         <ContainerDetails>
           <Span>Whatsapp: </Span>
-          {userWhatsapp}
+          {whatsapp}
         </ContainerDetails>
         <ContainerDetails>
           <Span>By: </Span>
           {creatorName}
         </ContainerDetails>
         <Add
-          href={`${URL_WHATSAPP}51${userWhatsapp}${DEFAULT_MESSAGE}`}
+          href={`${URL_WHATSAPP}51${whatsapp}${DEFAULT_MESSAGE}`}
           target="_blank"
         >
           <span className="mr-3">
